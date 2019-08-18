@@ -1,0 +1,1 @@
+export const ENDPOINT_BASE_URL="https://localhost:3030";
