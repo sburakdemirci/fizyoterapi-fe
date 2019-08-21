@@ -8,9 +8,9 @@ import {
   Input,
   Left,
   Body,
-  Title,
-  Right,
   CardItem,
+  Right,
+  Cartem,
   Card,
   Label,
   Button,
@@ -18,7 +18,7 @@ import {
 } from "native-base";
 import { connect } from "react-redux";
 
-import * as actions from "../../store/actions/index"; //actions dosyasından export edilen herşeyi ver. aynı zamanda ../ ile bir üst klasöre çıktık.
+import * as actions from "../store/actions/index"; //actions dosyasından export edilen herşeyi ver. aynı zamanda ../ ile bir üst klasöre çıktık.
 const a = 4;
 
 class LoginForm extends Component {
@@ -46,7 +46,7 @@ class LoginForm extends Component {
             style={{ textAlign: "center" }}
             secureTextEntry={true}
             placeholder="Parola"
-            onChangeText={(text)=>this.setState({password:text})}
+            onChangeText={text => this.setState({ password: text })}
             value={this.state.password}
           />
         </Item>
@@ -61,13 +61,13 @@ class LoginForm extends Component {
           }}
           success
           onPress={() => {
-            //this.props.login(5);
+            this.props.login(5);
 
-            //   console.log(this.props);
+            // console.log(this.props);
             console.log(this.state.password);
           }}
         >
-          <Text> {this.props.a} </Text>
+          <Text> {this.props.aa} </Text>
         </Button>
         <CardItem />
         <Button
@@ -84,13 +84,11 @@ class LoginForm extends Component {
     );
   }
 }
- const mapStateToProps = (state, ownProps) => {
-  console.log(ownProps);
-
-  return { state };
-};
+function mapStateToProps(state) {
+  console.log("state", state);
+  return { aa: state.LoginReducer.a };
+}
 export default connect(
   mapStateToProps,
   actions
-)(LoginForm); 
-
+)(LoginForm);
