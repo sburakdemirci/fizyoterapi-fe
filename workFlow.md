@@ -48,3 +48,6 @@ mesela helper'da login yaptırırsın
 <TextInputChild passValueToParent={this._getNameFromTextInputChild.bind(this)}>
 <ButtonChild passClickToParent={this._getOnBtnClick.bind(this)}>
 bu şekilde componentlerde state tutmadan herşeyini halledebilirsin. ve max reusability sağlarsın
+Uygulama açılırken token kontrol edilebilir. Bunu App.js'den çağırdığın tokenControl Helper'ı ile kontrol etmelisin.eğer true ise app'in içeriğini döndür, false ise logine at. Conditional rendering
+Bütün helperların istisna olmadan single responsibility olacak. solid'i uygulayabildiğin kadar uygula js'e
+Her state update'i redux'a yollamak mı yoksa component seviyesinde state'leri tutup setleyip sonra mı göndermek daha iyi bir yaklaşım bunu araştır.
