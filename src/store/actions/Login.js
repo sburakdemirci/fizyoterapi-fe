@@ -1,5 +1,5 @@
 import {LOGIN} from "./types"
-export const login12 = a => {
+export const login = a => {
   //parametre olarak libraryId aldı
   return {
     type: LOGIN,
@@ -7,15 +7,12 @@ export const login12 = a => {
   };
 };
 
-export const login1 = a => {
+export const logina = a => {
   //parametre olarak libraryId aldı
-  console.log("nameactions")
   return {
     type: "login",
     payload: a
   };
 };
-
-
 
 

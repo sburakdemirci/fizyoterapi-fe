@@ -1,6 +1,6 @@
 
 const INITIAL_STATE = {
-  a:11
+  a:"sss"
 };
 export default (state = INITIAL_STATE, action) => {
 
@@ -8,7 +8,7 @@ export default (state = INITIAL_STATE, action) => {
   //herhangi bir mapStateToProps fonksiyonu kullanmadığımız için ilk parametreyi null verik. ikinci parametre ise action döndürüyor.
   switch (action.type) {
     case "login": //eğer action selected_library ise bizi selected_library actionuna yönlendirir.reducer'ler actionları çağırır.
-      state = {
+    state = {
         ...state,
         a: action.payload
       };

@@ -1,7 +1,7 @@
 import React from "react";
 import { AppRegistry, StyleSheet, Text, View } from "react-native";
 import { Provider } from "react-redux";
-import store from "./store";
+import store from "./src/store";
 import * as Font from "expo-font";
 import LoginForm from "./src/components/LoginForm";
 import Expo from "expo";

@@ -17,15 +17,17 @@ import {
   Text
 } from "native-base";
 import { connect } from "react-redux";
+import { bindActionCreators } from "redux";
 
-import * as actions from "../store/actions/index"; //actions dosyasından export edilen herşeyi ver. aynı zamanda ../ ile bir üst klasöre çıktık.
+import { login } from "../store/actions/Login"; //actions dosyasından export edilen herşeyi ver. aynı zamanda ../ ile bir üst klasöre çıktık.
+import { login1 } from "../store/actions/NameActions";
 const a = 4;
 
 class LoginForm extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      username: null,
+      username: "",
       password: ""
     };
   }
@@ -37,7 +39,7 @@ class LoginForm extends Component {
           <Input
             style={{ textAlign: "center" }}
             placeholder="Email"
-            onChange={text => this.setState({ username: text })}
+            onChangeText={text => this.setState({ username: text })}
           />
         </Item>
         <CardItem />
@@ -46,7 +48,7 @@ class LoginForm extends Component {
             style={{ textAlign: "center" }}
             secureTextEntry={true}
             placeholder="Parola"
-            onChangeText={text => this.setState({ password: text })}
+            onChangeText={text => console.log(text)}
             value={this.state.password}
           />
         </Item>
@@ -61,16 +63,15 @@ class LoginForm extends Component {
           }}
           success
           onPress={() => {
-            this.props.login(5);
+            this.props.login(this.state.username);
 
             // console.log(this.props);
-            console.log(this.state.password);
           }}
         >
           <Text> {this.props.aa} </Text>
         </Button>
         <CardItem />
-        <Button
+   {/*      <Button
           style={{
             alignSelf: "center",
             width: "60%",
@@ -79,16 +80,33 @@ class LoginForm extends Component {
           success
         >
           <Text> Üye Ol </Text>
+        </Button> */}
+        <Button
+          style={{
+            alignSelf: "center",
+            width: "60%",
+            justifyContent: "center"
+          }}
+          success
+          onPress={() => {
+            this.props.login1(this.state.username);
+
+            // console.log(this.props);
+          }}
+        >
+          <Text> {this.props.aa} </Text>
         </Button>
       </Content>
     );
   }
 }
 function mapStateToProps(state) {
-  console.log("state", state);
+  console.log(state);
   return { aa: state.LoginReducer.a };
 }
+
 export default connect(
   mapStateToProps,
-  actions
+  { login, login1 }
 )(LoginForm);
+connect();

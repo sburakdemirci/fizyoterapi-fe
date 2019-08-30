@@ -51,3 +51,6 @@ bu şekilde componentlerde state tutmadan herşeyini halledebilirsin. ve max reu
 Uygulama açılırken token kontrol edilebilir. Bunu App.js'den çağırdığın tokenControl Helper'ı ile kontrol etmelisin.eğer true ise app'in içeriğini döndür, false ise logine at. Conditional rendering
 Bütün helperların istisna olmadan single responsibility olacak. solid'i uygulayabildiğin kadar uygula js'e
 Her state update'i redux'a yollamak mı yoksa component seviyesinde state'leri tutup setleyip sonra mı göndermek daha iyi bir yaklaşım bunu araştır.
+deneme
+
+secret Key'lerini gitignore yap. github'a açacaksan
